@@ -7,7 +7,7 @@ require(['vs/editor/editor.main'], function () {
 		document.getElementById("load").remove()
 	});
 	var editor = monaco.editor.create(document.getElementById('container'), {
-		value: ['function x() {', '\tconsole.log("Hello world!");', '}'].join('\n'),
+		value: "",
 		language: 'javascript'
 	});
 });
