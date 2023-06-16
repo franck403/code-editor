@@ -1,1 +1,1 @@
-script("file/")
+script("file/save.js")
