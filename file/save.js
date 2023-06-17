@@ -37,3 +37,11 @@ function load(id) {
     reader.readAsText(file);
     }
 }
+
+
+function loadall() {
+    var r = save()
+    r.forEach((id) => {
+        load(id)
+    });
+}
