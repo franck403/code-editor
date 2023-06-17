@@ -11,7 +11,7 @@ function save() {
             var myblob = new Blob([val], {
                 type: 'text/plain'
             });
-            var code = `window.saved${random} = "${myblob}"`
+            var code = `window.saved${random} = ${myblob}`
             console.log(code)
             eval(code)
         }
