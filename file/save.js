@@ -19,14 +19,14 @@ function save() {
 
 function load(id) {
     var file = `
-    var val = window.saved${id}";
-    var file = new Blob([val], {
-        type: 'text/plain';
-    });
-    return file
+    return window.saved${id}";
     `
     var file = eval(file)
-        const reader = new FileReader();
+    var file = new Blob([file], {
+        type: 'text/plain'
+    });
+    return file
+    const reader = new FileReader();
 
     reader.addEventListener(
     "load",
