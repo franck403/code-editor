@@ -8,10 +8,7 @@ function save() {
             var val = note.value
             var random = String(Math.random()).split(".")[1]
             window.savelist.push(random)
-            var myblob = new Blob([val], {
-                type: 'text/plain'
-            });
-            var code = `window.saved${random} = ${myblob}`
+            var code = `window.saved${random} = ${val}`
             console.log(code)
             eval(code)
         }
@@ -21,9 +18,15 @@ function save() {
 
 
 function load(id) {
-    var file = `return window.saved${id}"`
+    var file = `
+    var val = window.saved${id}";
+    var file = new Blob([val], {
+        type: 'text/plain';
+    });
+    return file
+    `
     var file = eval(file)
-    const reader = new FileReader();
+        const reader = new FileReader();
 
     reader.addEventListener(
     "load",
