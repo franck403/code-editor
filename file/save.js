@@ -16,12 +16,21 @@ function save() {
     return window.savelist[-1]
 }
 
+function runFromString(func) {
+    let func2 = Function(func);
+ 
+    // Now 'func' can be used as function
+    var result = func2()
+    console.log(result);
+    return result 
+}
 
 function load(id) {
     var file = `
     return window.saved${id}";
     `
-    var file = eval(file)
+
+    var file = runFromString(file)
     var file = new Blob([file], {
         type: 'text/plain'
     });
