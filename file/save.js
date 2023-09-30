@@ -25,7 +25,7 @@ function runFromString(func) {
 }
 
 function load(id) {
-    var file = `return window.saved${id}";`
+    var file = `return window.saved${id};`
     var file = runFromString(file)
     window.loadId = file
     var elm = document.querySelectorAll('.monaco-mouse-cursor-text')
