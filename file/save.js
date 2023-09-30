@@ -25,15 +25,10 @@ function runFromString(func) {
 }
 
 function load(id) {
-    var file = `return window.saved${id};`
-    var file = runFromString(file)
-    window.loadId = ""
-    window.loadId = file
     var elm = document.querySelectorAll('.monaco-mouse-cursor-text')
     elm.forEach((note) => {
         if (note.type == "textarea") {
-            console.log(window.loadId)
-            note.value = window.loadId.replaceAll('gcode.custom1','"')
+            note.value = runFromString(`return window.saved${id};`).replaceAll('gcode.custom1','"')
         }
     });
 }
