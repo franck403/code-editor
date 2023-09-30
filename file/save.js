@@ -17,9 +17,7 @@ function save() {
 }
 
 function runFromString(func) {
-    let func2 = Function(func);
- 
-    // Now 'func' can be used as function
+    let func2 = Function(func); 
     var result = func2()
     console.log(result);
     return result 
