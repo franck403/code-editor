@@ -13,7 +13,7 @@ function save() {
             eval(code)
         }
     });
-    return window.savelist
+    return window.savelist[-1]
 }
 
 
