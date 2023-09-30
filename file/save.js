@@ -31,6 +31,7 @@ function load(id) {
     var elm = document.querySelectorAll('.monaco-mouse-cursor-text')
     elm.forEach((note) => {
         if (note.type == "textarea") {
+            console.log(window.loadId)
             note.value = window.loadId.replaceAll('gcode.custom1','"')
         }
     });
