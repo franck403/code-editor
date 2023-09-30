@@ -25,6 +25,7 @@ function runFromString(func) {
 }
 
 function load(id) {
+    console.log(id)
     var elm = document.querySelectorAll('.monaco-mouse-cursor-text')
     elm.forEach((note) => {
         if (note.type == "textarea") {
