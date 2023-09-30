@@ -25,31 +25,17 @@ function runFromString(func) {
 
 function load(id) {
     var file = `return window.saved${id}";`
-
     var file = runFromString(file)
-    var file = new Blob([file], {
-        type: 'text/plain'
+    window.loadId = file
+    var elm = document.querySelectorAll('.monaco-mouse-cursor-text')
+    elm.forEach((note) => {
+        if (note.type == "textarea") {
+            note.value = window.loadId
+        }
     });
-    return file
-    const reader = new FileReader();
-
-    reader.addEventListener(
-    "load",
-    () => {
-        console.log(reader.result)
-    },
-    false
-    );
-
-    if (file) {
-    reader.readAsText(file);
-    }
 }
 
 
-function loadall() {
-    var r = save()
-    r.forEach((id) => {
-        load(id)
-    });
+function loadLast() {
+    load(window.savelist[-1])
 }
