@@ -36,5 +36,5 @@ function load(id) {
 
 
 function loadLast() {
-    load(window.savelist[-1])
+    load(window.savelist.reverse()[0])
 }
