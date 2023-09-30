@@ -17,16 +17,14 @@ function save() {
 }
 
 function runFromString(func) {
-    let func2 = Function(func); 
+    var func2 = Function(func); 
     var result = func2()
     console.log(result);
     return result 
 }
 
 function load(id) {
-    var file = `
-    return window.saved${id}";
-    `
+    var file = `return window.saved${id}";`
 
     var file = runFromString(file)
     var file = new Blob([file], {
