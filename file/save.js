@@ -2,15 +2,9 @@ function save() {
     if (window.savelist == undefined) {
         window.savelist = []
     }
-    var val = monaco.editor.getEditors()[0].getValue()
     var random = String(Math.random()).split(".")[1]
     window.savelist.push(random)
-    var val = val.replaceAll('"',"gcode.custom1")
-    var code = `window.saved${random} = "${val}"`
-    console.log(code)
-    eval(code)
-    var code = `window.saved = "${val}"`
-    eval(code)
+    eval(`window.saved${random} = "${monaco.editor.getEditors()[0].getValue().replaceAll('"',"gcode.custom1")}";window.saved = "${monaco.editor.getEditors()[0].getValue().replaceAll('"',"gcode.custom1")}";`)
     return window.savelist[-1]
 }
 
