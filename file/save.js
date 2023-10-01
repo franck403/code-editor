@@ -21,17 +21,20 @@ function runFromString(func) {
     return result 
 }
 
+function createBackup() {
+    runFromString(`window.backup = ${monaco.editor.getEditors()[0].getValue().replaceAll('gcode.custom1','"')}`)
+}
+
 function load(id) {
-    console.log(id)
-    var elm = document.querySelectorAll('.monaco-mouse-cursor-text')
-    elm.forEach((note) => {
-        if (note.type == "textarea") {
-            monaco.editor.getEditors()[0].setValue(runFromString(`return window.saved${id};`).replaceAll('gcode.custom1','"'))
-        }
-    });
+    createBackup()
+    monaco.editor.getEditors()[0].setValue(runFromString(`return window.saved${id};`).replaceAll('gcode.custom1','"'))
 }
 
 
 function loadLast() {
     load(window.saved)
+}
+
+function loadFromBackup() {
+    monaco.editor.getEditors()[0].setValue(runFromString(`return window.backup`).replaceAll('gcode.custom1','"'))
 }
