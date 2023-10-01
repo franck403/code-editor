@@ -17,7 +17,7 @@ function runFromString(func) {
 }
 
 function createBackup() {
-    runFromString(`window.backup = ${monaco.editor.getEditors()[0].getValue().replaceAll('gcode.custom1','"')}`)
+    runFromString(`window.backup = "${monaco.editor.getEditors()[0].getValue().replaceAll('gcode.custom1','"')}"`)
 }
 
 function load(id) {
