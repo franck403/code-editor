@@ -9,6 +9,8 @@ function save() {
     var code = `window.saved${random} = "${val}"`
     console.log(code)
     eval(code)
+    var code = `window.saved = "${val}"`
+    eval(code)
     return window.savelist[-1]
 }
 
@@ -31,5 +33,5 @@ function load(id) {
 
 
 function loadLast() {
-    load(window.savelist.reverse()[0])
+    load(window.saved)
 }
