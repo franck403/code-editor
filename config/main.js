@@ -12,6 +12,7 @@ require(['vs/editor/editor.main'], function () {
 	});
 	monaco.languages.registerCompletionItemProvider('javascript', {
 		provideCompletionItems: (model, position) => {
+			const keywords = ["gl.SendMessage","gl.OnMessage"]
 			const suggestions = keywords.map(keyword => ({
 				label: keyword,
 				kind: monaco.languages.CompletionItemKind.Keyword,
