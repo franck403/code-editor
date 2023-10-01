@@ -4,7 +4,8 @@ function save() {
     }
     var random = String(Math.random()).split(".")[1]
     window.savelist.push(random)
-    eval(`window.saved${random} = "${monaco.editor.getEditors()[0].getValue().replaceAll('"',"gcode.custom1")}";window.saved = "${monaco.editor.getEditors()[0].getValue().replaceAll('"',"gcode.custom1")}";`)
+    var val = monaco.editor.getEditors()[0].getValue().replaceAll('"',"gcode.custom1")
+    eval(`window.saved${random} = "${val}";window.saved = "${val}";`)
     return window.savelist[-1]
 }
 

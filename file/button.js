@@ -1,0 +1,4 @@
+function buttonSave() {
+    save()
+    loadLast()
+}
