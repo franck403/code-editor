@@ -42,3 +42,9 @@
         transform: scale(1);
     }
 }
+
+button {
+    border-radius:10px;
+    border:none;
+    background:white;
+}
