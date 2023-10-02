@@ -17,7 +17,6 @@ require(['vs/editor/editor.main'], function () {
 				kind: monaco.languages.CompletionItemKind.Keyword,
 				insertText: keyword[1]
 			}));
-	
 			console.log('Gcod is ready to use');
 			document.getElementById("load").remove()
 			return { suggestions };

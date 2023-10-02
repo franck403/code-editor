@@ -1,3 +1,3 @@
-var gl = {}
+window.gl = {}
 script("package/send.js")
 script("package/get.js")

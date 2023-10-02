@@ -1,4 +1,9 @@
 var func = (functionData) => {
     functionData()
 }
-gl.push(func)
+try {
+    gl.push(func)
+} catch {
+    window.gl = {}
+    gl.push(func)
+}

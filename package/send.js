@@ -1,4 +1,9 @@
 var func = (message,id) => {
     console.log(`${message} was sended with id of ${id}`)
 }
-gl.push(func)
+try {
+    gl.push(func)
+} catch {
+    window.gl = {}
+    gl.push(func)
+}
