@@ -29,6 +29,9 @@ function load(id) {
 function loadLast() {
     load(window.saved)
 }
+function loadLastReturn() {
+    return runFromString(`return window.saved${window.saved};`).replaceAll('gcode.custom1','"')
+}
 
 function loadFromBackup() {
     monaco.editor.getEditors()[0].setValue(runFromString(`return window.backup`).replaceAll('gcode.custom1','"'))
