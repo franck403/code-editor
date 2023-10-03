@@ -1,4 +1,5 @@
 script("file/save.js")
 script("file/button.js")
+script("file/log.js")
 script("package/main.js")
 script("config/main.js")

@@ -4,7 +4,7 @@ function save() {
     }
     var random = String(Math.random()).split(".")[1]
     window.savelist.push(random)
-    var val = monaco.editor.getEditors()[0].getValue().replaceAll('"',"gcode.custom1")
+    var val = monaco.editor.getEditors()[0].getValue().replaceAll('"',"gcode.custom1").replaceAll("console.log","log")
     eval(`window.saved${random} = ` + "`" + val + "`" +`;window.saved = "${random}";`)
     return window.savelist[-1]
 }
@@ -16,7 +16,7 @@ function runFromString(func) {
 }
 
 function createBackup() {
-    runFromString(`window.backup = "${monaco.editor.getEditors()[0].getValue().replaceAll('gcode.custom1','"')}"`)
+    runFromString(`window.backup = "${monaco.editor.getEditors()[0].getValue().replaceAll('gcode.custom1','"').replaceAll("console.log","log")}"`)
 }
 
 function load(id) {
@@ -37,7 +37,7 @@ function loadFromBackup() {
 }
 
 function cacheSave(code) {
-    localStorage.setItem("last",code.replaceAll('gcode.custom1','"'))    
+    localStorage.setItem("last",code.replaceAll('gcode.custom1','"'))
 }
 function cacheGet() {
     var last = localStorage.getItem("last")
