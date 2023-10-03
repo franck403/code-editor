@@ -21,7 +21,7 @@ var func1 = (func) => {
 }
 var func2 = () => {
     window.last = undefined
-    window.prevent = true
+    window.prevent = false
 }
 try {
     gl["SendMessage"] = func
