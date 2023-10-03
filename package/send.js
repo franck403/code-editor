@@ -4,7 +4,11 @@ var func = (message,id) => {
     window.prevent = true
     window.onsendmessage.forEach(funcs => {
         if (window.prevent) {
-            funcs(window.last)
+            try {
+                funcs(window.last)
+            } catch {
+                console.log(funcs)
+            }
         }
     });
 }
