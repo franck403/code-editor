@@ -2,7 +2,8 @@ var func = (functionData) => {
     functionData()
 }
 try {
-    gl.push(func)
+    gl["OnMessage"] = func
 } catch {
     window.gl = {}
+    gl["OnMessage"] = func
 }
