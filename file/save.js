@@ -5,6 +5,7 @@ function save() {
     var random = String(Math.random()).split(".")[1]
     window.savelist.push(random)
     var val = monaco.editor.getEditors()[0].getValue().replaceAll('"',"gcode.custom1")
+    console.log(`window.saved${random} = "${val}";window.saved = "${random}";`)
     eval(`window.saved${random} = "${val}";window.saved = "${random}";`)
     return window.savelist[-1]
 }
