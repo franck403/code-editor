@@ -66,12 +66,12 @@ button {
     word-break: break-all;
     bottom: 5vh;
     width: 20vw;
-    z-index: 10;
 }
 
 .h:hover #logs {
     width: 43%;
 }
 .h:hover {
+    z-index:1;
     width: 43% !important;
 }
