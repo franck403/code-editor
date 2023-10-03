@@ -41,7 +41,9 @@ function cacheGet() {
     var last = localStorage.getItem("last")
     if (last != undefined) {
         return last
+    } else if (last != "" && last != " ") {
+        return "// ic-hat extention editor"
     } else {
         return "// ic-hat extention editor"
-    } 
+    }
 }
