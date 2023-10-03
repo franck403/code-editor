@@ -6,9 +6,7 @@ var func = (message,id) => {
         if (window.prevent) {
             try {
                 funcs(window.last)
-            } catch {
-                console.log(funcs)
-            }
+            } catch {}
         }
     });
 }
