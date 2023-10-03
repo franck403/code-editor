@@ -1,4 +1,4 @@
 function run() {
     save()
-    loadLastReturn()
+    runFromString(loadLastReturn())
 }
