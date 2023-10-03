@@ -1,6 +1,6 @@
 function run() {
-    save()
     clear()
+    save()
     runFromString(loadLastReturn())
     loadLog()
 }

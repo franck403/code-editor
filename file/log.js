@@ -1,5 +1,4 @@
 function log(message) {
-    console.log(message)
     if (window.runLog == undefined){
         window.runLog = []
     }
