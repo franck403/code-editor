@@ -33,3 +33,7 @@ function loadLast() {
 function loadFromBackup() {
     monaco.editor.getEditors()[0].setValue(runFromString(`return window.backup`).replaceAll('gcode.custom1','"'))
 }
+
+function cacheSave(code) {
+    localStorage.setItem("last",code.replaceAll('gcode.custom1','"'))    
+}

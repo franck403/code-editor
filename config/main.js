@@ -19,4 +19,7 @@ require(['vs/editor/editor.main'], function () {
 			return { suggestions };
 		}
 	});	
+	editor.onDidChangeModelContent(function (e) {
+		console.log(e)
+    });
 });
