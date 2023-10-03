@@ -56,3 +56,22 @@ button {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+#logs {
+    font-family: sans-serif;
+    font-size: 17px;
+    position: fixed;
+    max-height: 50vh;
+    min-height: 20vh;
+    word-break: break-all;
+    bottom: 5vh;
+    width: 81vw;
+    z-index: 10;
+}
+
+.h:hover #logs {
+    width: 43vw;
+}
+.h:hover {
+    width: 43vw !important;
+}
