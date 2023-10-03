@@ -5,13 +5,11 @@ require(['vs/editor/editor.main'], function () {
 		document.getElementById("load").remove()
 });
 	var editor = monaco.editor.create(document.getElementById('container'), {
-		value: "",
+		value: "// ic-hat extention editor",
 		language: 'javascript'
 	});
 	monaco.languages.registerCompletionItemProvider('javascript', {
 		provideCompletionItems: (model, position) => {
-			console.log(model)
-			console.log(position)
 			const keywords = [["gl.SendMessage","gl.SendMessage(/*message*/)"],["gl.OnMessage","gl.OnMessage((data) => {/*code ex:data.val().message*/})"],["OnSendMessage","OnSendMessage(() => {/*code ex:data.val().message*/})"]]
 			const suggestions = keywords.map(keyword => ({
 				label: keyword[0],
