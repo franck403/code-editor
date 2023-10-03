@@ -70,8 +70,8 @@ button {
 }
 
 .h:hover #logs {
-    width: 43vw;
+    width: 43%;
 }
 .h:hover {
-    width: 43vw !important;
+    width: 43% !important;
 }
