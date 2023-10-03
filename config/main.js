@@ -3,9 +3,10 @@ require(['vs/editor/editor.main'], function () {
 	var onend = monaco.editor.onDidCreateEditor(function (event) {
 		console.log('Gcod is ready to use');
 		document.getElementById("load").remove()
-});
+	});
+	var val = cacheGet()
 	var editor = monaco.editor.create(document.getElementById('container'), {
-		value: "// ic-hat extention editor",
+		value: val,
 		language: 'javascript'
 	});
 	monaco.languages.registerCompletionItemProvider('javascript', {
@@ -20,6 +21,7 @@ require(['vs/editor/editor.main'], function () {
 		}
 	});	
 	editor.onDidChangeModelContent(function (e) {
-		console.log(e)
+		e = monaco.editor.getEditors()[0].getValue()
+		cacheSave(e)
     });
 });

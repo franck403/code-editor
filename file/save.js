@@ -37,3 +37,11 @@ function loadFromBackup() {
 function cacheSave(code) {
     localStorage.setItem("last",code.replaceAll('gcode.custom1','"'))    
 }
+function cacheGet() {
+    var last = localStorage.getItem("last")
+    if (last != undefined) {
+        return last
+    } else {
+        return "// ic-hat extention editor"
+    } 
+}
