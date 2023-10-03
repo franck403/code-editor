@@ -12,7 +12,6 @@ function save() {
 function runFromString(func) {
     var func2 = Function(func); 
     var result = func2()
-    console.log(result);
     return result 
 }
 
