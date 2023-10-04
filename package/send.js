@@ -21,7 +21,7 @@ function message_render(message, type = "none") {
     } else {
         var message_good = message
     }
-    var message_start = message_good.substring(0, 1000);
+    var message_start = message_good.substring(0, 100);
     if (type == "none") {
         return link_render(message_start).replaceAll("\n", "<br>")
     } else {
