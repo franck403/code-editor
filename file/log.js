@@ -5,7 +5,7 @@ function log(message) {
     window.runLog.push(message)
 }
 
-function clearLOg() {
+function clearLog() {
     if (window.runLog == undefined){
         window.runLog = []
     }
