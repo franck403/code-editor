@@ -14,6 +14,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
+window.database = database
+
 export function connection() {
-    return database
+    return window.database
 }
