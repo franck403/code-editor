@@ -1,3 +1,3 @@
-import { connection } from 'firebase.js'
+import { connection } from 'connector/firebase.js'
 
 database = connection()
