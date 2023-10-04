@@ -1,5 +1,4 @@
 var func = (message,id) => {
-    console.log(`${message} was sended with id of ${id}`)
     log(`${message} was sended with id of ${id}`)
     window.last = [message,id]
     window.prevent = true
