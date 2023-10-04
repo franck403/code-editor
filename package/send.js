@@ -1,11 +1,40 @@
-var func = (message,id) => {
+function urlify(text) {
+    var urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, function (url) {
+        return `<a class="link" onclick="url('${url}')">${url}</a>`;
+    })
+}
+
+function link_render(message) {
+    return urlify(message)
+}
+function message_render(message, type = "none") {
+    var messages = (function (t) {
+        var r = /[^\u0300-\u036F\u0489]+/g;
+        var unzalgo = function () {
+            return (t.match(r) || [""]).join("");
+        };
+        return unzalgo()
+    })(message);
+    if (messages != undefined && messages != "") {
+        var message_good = messages
+    } else {
+        var message_good = message
+    }
+    var message_start = message_good.substring(0, 1000);
+    if (type == "none") {
+        return link_render(message_start).replaceAll("\n", "<br>")
+    } else {
+        return message_start
+    }
+}
+var func = (message, id) => {
     log(`${message} was sended with id of ${id}`)
-    window.last = [message,id]
-    var fg = document.getElementById('content').value
+    window.last = [message, id]
+    var fg = message
     var gh = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    if (document.getElementById('content').value != "" && fg.replace(/\s/g, '').length != 0) {
-        var str = document.getElementById('content').value;
-        document.getElementById('content').value = "";
+    if (message != "" && fg.replace(/\s/g, '').length != 0) {
+        var str = message;
         var str1 = str.replaceAll("<", "&lt;")
         var str2 = str1.replaceAll(">", "&gt;")
         var message = str2;
@@ -14,7 +43,7 @@ var func = (message,id) => {
         var name = myName;
         const id = push(child(ref(database), 'messages')).key;
         var friend = "none"
-        var cusid = document.getElementsByClassName('chat active-chat')[0].dataset.chat
+        var cusid = id
         image_render(myEmail, myName)
         set(ref(database, 'messages/' + cusid + '/' + id), {
             email: myEmail,
@@ -31,13 +60,13 @@ var func = (message,id) => {
         if (window.prevent) {
             try {
                 funcs(window.last)
-            } catch {}
+            } catch { }
         }
     });
 }
 var func1 = (func) => {
     if (window.onsendmessage == undefined) {
-        window.onsendmessage = []        
+        window.onsendmessage = []
     }
     window.onsendmessage.push(func)
     return true
