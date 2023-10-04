@@ -5,8 +5,12 @@ function log(message) {
     window.runLog.push(message)
 }
 
-function clear() {
+function clearLOg() {
+    if (window.runLog == undefined){
+        window.runLog = []
+    }
     window.runLog = []
+    document.getElementById("logs").innerHTML = ""
 }
 
 function loadLog() {

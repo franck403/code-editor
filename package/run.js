@@ -1,5 +1,5 @@
 function run() {
-    clear()
+    clearLog()
     save()
     runFromString(loadLastReturn())
     loadLog()
