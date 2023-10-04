@@ -33,7 +33,7 @@ var func = (message, id) => {
     window.last = [message, id]
     var fg = message
     var gh = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    if (message != "" && fg.replace(/\s/g, '').length != 0) {
+    if (message != "" && fg.replace(/\s/g, '').length != 0 && myEmail != undefined) {
         var str = message;
         var str1 = str.replaceAll("<", "&lt;")
         var str2 = str1.replaceAll(">", "&gt;")
@@ -43,7 +43,7 @@ var func = (message, id) => {
         var name = myName;
         const id = push(child(ref(database), 'messages')).key;
         var friend = "none"
-        var cusid = id
+        var cusid = document.getElementsByClassName('chat active-chat')[0].dataset.chat
         image_render(myEmail, myName)
         set(ref(database, 'messages/' + cusid + '/' + id), {
             email: myEmail,
