@@ -46,6 +46,7 @@ var func2 = () => {
     window.last = undefined
     window.prevent = false
 }
+var gl = window.gl
 try {
     gl["SendMessage"] = func
     gl["OnSendMessage"] = func1
