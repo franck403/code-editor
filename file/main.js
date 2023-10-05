@@ -6,7 +6,10 @@ script("config/main.js")
 script("compiler/main.js")
 script("connector/session/connect.js")
 importScripts("connector/firebase.js")
-script("https://www.gstatic.com/firebasejs/8.10.0/firebase.js")
+script("https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js")
+script("https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js")
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyD9po7l-vwO0VrY1rMYDFTYNlEBv54T6do",
     authDomain: "ic-hat.firebaseapp.com",
@@ -18,5 +21,5 @@ const firebaseConfig = {
     measurementId: "G-YC8K0D7GLR"
 };
 
-const app = firebase.initializeApp(firebaseConfig);
-const database = firebase.getDatabase(app);
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
