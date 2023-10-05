@@ -7,7 +7,6 @@ function loged() {
     sendMessage("state")
     window.state = false
     window.addEventListener('message', function (event) {
-        log(event)
         window.state = true
     });
 }
@@ -25,7 +24,7 @@ function startSessionTime() {
             setTimeout(startSessionTime, 1000)
             window.StateNow++
         } else {
-            if (window.state) {
+            if (window.state == true) {
                 window.session = true
                 log("[Session Manager] Session started")        
             } else {
@@ -52,7 +51,7 @@ function startSessionTime1() {
             window.StateNow++
         } else {
             window.session = false
-            if (window.state) {
+            if (window.state == true) {
                 window.session = true
                 log("[Session Manager] Session started")        
             } else {
