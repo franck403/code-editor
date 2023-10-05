@@ -1,5 +1,5 @@
 function run() {
-    if (window.rgtnhjgfthuhbtfrnjgtrnjgtfrjufhun) {
+    if (!window.rgtnhjgfthuhbtfrnjgtrnjgtfrjufhun) {
         window.rgtnhjgfthuhbtfrnjgtrnjgtfrjufhun = true
         const firebaseConfig = {
             apiKey: "AIzaSyD9po7l-vwO0VrY1rMYDFTYNlEBv54T6do",
