@@ -12,7 +12,7 @@ function run() {
             measurementId: "G-YC8K0D7GLR"
         };
         firebase.initializeApp(firebaseConfig);
-        var database = firebase.database();
+        window.Datafire = firebase.database();
         console.log(database)
     }
     clearLog()

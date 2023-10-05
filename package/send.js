@@ -49,11 +49,11 @@ var func = (message, id) => {
         var message = str2;
         var message = message_render(message, "nop");
         var name = myName;
-        const id = push(child(ref(database), 'messages')).key;
+        const id = window.Datafire.push(child(window.Datafire.ref(database), 'messages')).key;
         var friend = "none"
         var cusid = id
         log(`${message} was sended with id of ${id}`)
-        set(ref(database, 'messages/' + cusid + '/' + id), {
+        window.Datafire.set(window.Datafire.ref(database, 'messages/' + cusid + '/' + id), {
             email: myEmail,
             allow: friend,
             type: "new-encrypted",
