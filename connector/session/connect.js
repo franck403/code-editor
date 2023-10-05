@@ -7,6 +7,7 @@ function loged() {
     sendMessage("state")
     window.state = false
     window.addEventListener('message', function (event) {
+        log(event.data)
         window.state = true
     });
 }
@@ -45,7 +46,7 @@ function startSessionTime1() {
             window.StateNow++
         } else {
             window.session = false
-            log("[session manager] Do you have the beta chat open ?")
+            log("[Session manager] Do you have the beta chat open ?")
         }
     }
     clearTimeout()
