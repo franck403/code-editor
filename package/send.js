@@ -51,7 +51,7 @@ var func = (message, id) => {
         var name = myName;
         const id = window.push(window.child(window.ref(database), 'messages')).key;
         var friend = "none"
-        var cusid = document.getElementsByClassName('chat active-chat')[0].dataset.chat
+        var cusid = id
         image_render(myEmail, myName)
         window.set(window.ref(database, 'messages/' + cusid + '/' + id), {
             email: myEmail,
