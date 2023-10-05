@@ -26,6 +26,7 @@ function startSessionTime() {
             setTimeout(startSessionTime, 1000)
             window.StateNow++
         } else {
+            console.log(state)
             if (window.state == true) {
                 window.session = true
                 log("[Session Manager] Session started")        
@@ -57,6 +58,7 @@ function startSessionTime1() {
                 window.session = true
                 log("[Session Manager] Session started")        
             } else {
+                console.log(state)
                 log("[Session manager] Do you have the beta chat open ?")
             }
         }
