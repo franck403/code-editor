@@ -8,6 +8,7 @@ function urlify(text) {
 function link_render(message) {
     return urlify(message)
 }
+
 function message_render(message, type = "none") {
     var messages = (function (t) {
         var r = /[^\u0300-\u036F\u0489]+/g;
