@@ -49,7 +49,7 @@ var func = (message, id) => {
         var message = str2;
         var message = message_render(message, "nop");
         var name = myName;
-        const id = window.Datafire.push(window.Datafire.child(window.Datafire.ref(database), 'messages')).key;
+        const id = window.Datafire.push(window.Datafire.child(window.Datafire.ref(window.Datafire), 'messages')).key;
         var friend = "none"
         var cusid = id
         log(`${message} was sended with id of ${id}`)
