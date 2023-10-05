@@ -9,7 +9,7 @@ function link_render(message) {
     return urlify(message)
 }
 
-function name() {
+function Name() {
     getName()
     return localStorage.getItem("name")
 }
