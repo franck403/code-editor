@@ -60,7 +60,7 @@ function startSession1() {
         log("[Session Manager] Testing session")
         setTimeout(startSessionTime, 1000)
     }
-    elem.src = "https://chat.beta.geoloup.com/d/session/"
+    elem.src = "https://beta.chat.geoloup.com/d/session/"
     document.getElementsByTagName("body")[0].appendChild(elem)
 }
 
