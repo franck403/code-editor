@@ -11,10 +11,6 @@ function getEmail() {
     });    
 }
 
-function Name() {
-    name
-}
-
 function name() {
     getName()
     return localStorage.getItem("name")
