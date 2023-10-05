@@ -16,6 +16,7 @@ function startSessionTime() {
     window.stateNow = 0
     if (window.state) {
         window.session = true
+        log("[Session Manager] Session started")
     } else {
         window.session = false
         if (window.stateMax < window.stateNow){
@@ -34,6 +35,7 @@ function startSessionTime1() {
     window.stateNow = 0
     if (window.state) {
         window.session = true
+        log("[Session Manager] Session started")
     } else {
         window.session = false
         if (window.stateMax < window.stateNow){
@@ -52,6 +54,7 @@ function startSession1() {
     var elem = document.createElement("iframe");
     elem.onload = function () {
         loged()
+        log("[Session Manager] Testing session")
         setTimeout(startSessionTime, 1000)
     }
     elem.src = "https://chat.beta.geoloup.com/d/session/"
@@ -62,6 +65,7 @@ function startSession2() {
     var elem = document.createElement("iframe");
     elem.onload = function () {
         loged()
+        log("[Session Manager] Testing session")
         setTimeout(startSessionTime1, 1000)
     }
     elem.src = "https://chat.beta.geoloup.com/d/session/"
@@ -69,6 +73,6 @@ function startSession2() {
 }
 
 function startSession() {
+    log("[Session Manager] Creating session")
     startSession1();
-    startSession2();
 }
