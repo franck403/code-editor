@@ -52,7 +52,6 @@ var func = (message, id) => {
         const id = window.push(window.child(window.ref(database), 'messages')).key;
         var friend = "none"
         var cusid = id
-        image_render(myEmail, myName)
         window.set(window.ref(database, 'messages/' + cusid + '/' + id), {
             email: myEmail,
             allow: friend,
