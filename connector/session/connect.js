@@ -11,7 +11,7 @@ function getEmail() {
     });    
 }
 
-function NAme() {
+function Name() {
     name
 }
 
