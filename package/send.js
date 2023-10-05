@@ -35,7 +35,6 @@ function message_render(message, type = "none") {
     }
 }
 var func = (message, id) => {
-    log(`${message} was sended with id of ${id}`)
     var id = room()
     window.last = [message, id]
     var myEmail = email()
@@ -52,6 +51,7 @@ var func = (message, id) => {
         const id = window.push(window.child(window.ref(database), 'messages')).key;
         var friend = "none"
         var cusid = id
+        log(`${message} was sended with id of ${id}`)
         window.set(window.ref(database, 'messages/' + cusid + '/' + id), {
             email: myEmail,
             allow: friend,
