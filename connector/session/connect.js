@@ -6,7 +6,6 @@ function email() {
 function getEmail() {
     sendMessage("email")
     window.addEventListener('message', function(event) {
-        console.log("Message received from the child: " + event.data); // Message received from child
         this.localStorage.setItem("email",event.data)
         removeEventListener('message',window)
     });    
@@ -24,7 +23,6 @@ function name() {
 function getName() {
     sendMessage("name")
     window.addEventListener('message', function(event) {
-        console.log("Message received from the child: " + event.data); // Message received from child
         this.localStorage.setItem("name",event.data)
         removeEventListener('message',window)
     });    
@@ -39,7 +37,6 @@ function room() {
 function getRoom() {
     sendMessage("room")
     window.addEventListener('message', function(event) {
-        console.log("Message received from the child: " + event.data); // Message received from child
         this.localStorage.setItem("room",event.data)
         removeEventListener('message',window)
     });    
