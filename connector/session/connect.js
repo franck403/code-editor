@@ -25,7 +25,13 @@ function startSessionTime() {
             setTimeout(startSessionTime, 1000)
             window.StateNow++
         } else {
-            startSession2()
+            if (window.state) {
+                window.session = true
+                log("[Session Manager] Session started")        
+            } else {
+                log("[Session manager] Testing is finish")
+                startSession2()
+            }
         }
     }
     clearTimeout()
@@ -46,7 +52,12 @@ function startSessionTime1() {
             window.StateNow++
         } else {
             window.session = false
-            log("[Session manager] Do you have the beta chat open ?")
+            if (window.state) {
+                window.session = true
+                log("[Session Manager] Session started")        
+            } else {
+                log("[Session manager] Do you have the beta chat open ?")
+            }
         }
     }
     clearTimeout()
