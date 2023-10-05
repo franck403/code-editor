@@ -7,7 +7,9 @@ function loged() {
     sendMessage("state")
     window.state = false
     window.addEventListener('message', function (event) {
+        log("[login] Called")
         window.state = true
+        this.removeEventListener()
     });
 }
 
