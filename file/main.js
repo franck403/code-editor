@@ -8,6 +8,7 @@ script("connector/session/connect.js")
 importScripts("connector/firebase.js")
 script("https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js")
 script("https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js")
+script("https://www.gstatic.com/firebasejs/8.10.0/firebase.js")
 
 
 const firebaseConfig = {
