@@ -13,6 +13,7 @@ function run() {
         };
         firebase.initializeApp(firebaseConfig);
         var database = firebase.database();
+        console.log(database)
     }
     clearLog()
     save()
