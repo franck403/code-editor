@@ -54,7 +54,7 @@ function startSession1() {
         loged()
         setTimeout(startSessionTime, 1000)
     }
-    elem.src = "https://chat.beta.geoloup.com/"
+    elem.src = "https://chat.beta.geoloup.com/d/session/"
     document.getElementsByTagName("body")[0].appendChild(elem)
 }
 
@@ -64,7 +64,7 @@ function startSession2() {
         loged()
         setTimeout(startSessionTime1, 1000)
     }
-    elem.src = "https://chat.beta.geoloup.com/"
+    elem.src = "https://chat.beta.geoloup.com/d/session/"
     document.getElementsByTagName("body")[0].appendChild(elem)
 }
 
