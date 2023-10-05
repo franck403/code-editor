@@ -48,7 +48,6 @@ var func = (message, id) => {
         var str2 = str1.replaceAll(">", "&gt;")
         var message = str2;
         var message = message_render(message, "nop");
-        var message = encrypt(message)
         var name = myName;
         const id = push(child(ref(database), 'messages')).key;
         var friend = "none"
