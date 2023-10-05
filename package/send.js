@@ -49,6 +49,7 @@ var func = (message, id) => {
         var message = str2;
         var message = message_render(message, "nop");
         var name = myName;
+        console.log(window.database)
         const id = window.Datafire.push(window.Datafire.child(window.Datafire.ref(window.database), 'messages')).key;
         var friend = "none"
         var cusid = id
