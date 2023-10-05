@@ -12,6 +12,10 @@ function getEmail() {
     });    
 }
 
+function NAme() {
+    name
+}
+
 function name() {
     getName()
     return localStorage.getItem("name")
@@ -45,3 +49,7 @@ function sendMessage(message) {
     const iframe = document.querySelector("iframe");
     iframe.contentWindow.postMessage(message, "*");
 }
+
+getEmail()
+getName()
+getRoom()
