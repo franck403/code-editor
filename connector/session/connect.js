@@ -23,7 +23,7 @@ function startSessionTime() {
     } else {
         window.session = false
         if (window.stateMax < window.stateNow){
-            setTimeout(startSessionTime, 1000)
+            setTimeout(startSessionTime, 5000)
             window.StateNow++
         } else {
             console.log(state)
@@ -32,7 +32,6 @@ function startSessionTime() {
                 log("[Session Manager] Session started")        
             } else {
                 log("[Session manager] Testing is finish")
-                startSession2()
             }
         }
     }
@@ -50,7 +49,7 @@ function startSessionTime1() {
     } else {
         window.session = false
         if (window.stateMax < window.stateNow){
-            setTimeout(startSessionTime, 1000)
+            setTimeout(startSessionTime, 5000)
             window.StateNow++
         } else {
             window.session = false
@@ -92,4 +91,5 @@ function startSession2() {
 function startSession() {
     log("[Session Manager] Creating session")
     startSession1();
+    startSession2()
 }
