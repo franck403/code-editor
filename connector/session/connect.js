@@ -14,6 +14,7 @@ function loged() {
 function startSessionTime() {
     window.stateMax = 10
     window.stateNow = 0
+    loged()
     if (window.state) {
         window.session = true
         log("[Session Manager] Session started")
@@ -33,6 +34,7 @@ function startSessionTime() {
 function startSessionTime1() {
     window.stateMax = 10
     window.stateNow = 0
+    loged()
     if (window.state) {
         window.session = true
         log("[Session Manager] Session started")
