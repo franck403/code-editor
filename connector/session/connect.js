@@ -7,7 +7,7 @@ function getEmail() {
     sendMessage("email")
     window.addEventListener('message', function(event) {
         if (event.data[0] == "e") {
-            this.localStorage.setItem("email",event.data)
+            this.localStorage.setItem("email",event.data.replace("e",""))
         }
         removeEventListener('message',window)
     });    
@@ -22,7 +22,7 @@ function getName() {
     sendMessage("name")
     window.addEventListener('message', function(event) {
         if (event.data[0] == "n") {
-            this.localStorage.setItem("name",event.data)
+            this.localStorage.setItem("name",event.data.replace("n",""))
         }
         removeEventListener('message',window)
     });    
@@ -38,7 +38,7 @@ function getRoom() {
     sendMessage("room")
     window.addEventListener('message', function(event) {
         if (event.data[0] == "r") {
-            this.localStorage.setItem("room",event.data)
+            this.localStorage.setItem("room",event.data.replace("r",""))
         }
         removeEventListener('message',window)
     });    
