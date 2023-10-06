@@ -35,7 +35,7 @@ function message_render(message, type = "none") {
         return message_start
     }
 }
-var func = (message, id) => {
+var func = (message) => {
     var id = room()
     window.last = [message, id]
     var myEmail = email()
