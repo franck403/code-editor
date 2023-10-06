@@ -6,7 +6,9 @@ function email() {
 function getEmail() {
     sendMessage("email")
     window.addEventListener('message', function(event) {
-        this.localStorage.setItem("email",event.data)
+        if (event.data[0] == "e") {
+            this.localStorage.setItem("email",event.data)
+        }
         removeEventListener('message',window)
     });    
 }
@@ -19,7 +21,9 @@ function name() {
 function getName() {
     sendMessage("name")
     window.addEventListener('message', function(event) {
-        this.localStorage.setItem("name",event.data)
+        if (event.data[0] == "n") {
+            this.localStorage.setItem("name",event.data)
+        }
         removeEventListener('message',window)
     });    
 }
@@ -33,7 +37,9 @@ function room() {
 function getRoom() {
     sendMessage("room")
     window.addEventListener('message', function(event) {
-        this.localStorage.setItem("room",event.data)
+        if (event.data[0] == "r") {
+            this.localStorage.setItem("room",event.data)
+        }
         removeEventListener('message',window)
     });    
 }
