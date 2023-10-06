@@ -16,6 +16,7 @@ function run() {
     }
     clearLog()
     save()
+    getRoom()
     runFromString(compile(loadLastReturn()))
     loadLog()
 }

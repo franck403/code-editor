@@ -36,6 +36,7 @@ function message_render(message, type = "none") {
     }
 }
 var func = (message) => {
+    getRoom()
     var id = localStorage.room
     window.last = [message, id]
     log(`${message} was sended with id of ${id}`)
