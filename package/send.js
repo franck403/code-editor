@@ -62,8 +62,7 @@ var func = (message) => {
             var name = myName;
             var friend = "none"
             var cusid = id
-            firebase.database().ref('posts').push();
-            window.Datafire.ref('messages/' + cusid + '/' + id).set({
+            firebase.database().ref('messages/' + cusid + '/' + id).push().set({
                 email: myEmail,
                 allow: friend,
                 type: "message",
