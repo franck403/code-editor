@@ -52,7 +52,7 @@ var func = (message, id) => {
         var friend = "none"
         var cusid = id
         log(`${message} was sended with id of ${id}`)
-        window.Datafire.set(window.Datafire.ref(window.DataFire, 'messages/' + cusid + '/' + id), {
+        window.Datafire.set(window.Datafire.ref('messages/' + cusid + '/' + id), {
             email: myEmail,
             allow: friend,
             type: "new-encrypted",
