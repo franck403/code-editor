@@ -39,7 +39,7 @@ var func = (message) => {
     getRoom()
     var id = localStorage.room
     window.last = [message, id]
-    log(`${message} was sended with id of ${id}`)
+    log(`Message sent : ${message}`)
     window.prevent = true
     window.onsendmessage.forEach(funcs => {
         if (window.prevent) {
