@@ -38,30 +38,7 @@ function message_render(message, type = "none") {
 var func = (message) => {
     var id = localStorage.room
     window.last = [message, id]
-    var myEmail = email()
-    var myName = Name()
-    var fg = message
-    var gh = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    if (message != "" && fg.replace(/\s/g, '').length != 0 && myEmail != undefined) {
-        var str = message;
-        var str1 = str.replaceAll("<", "&lt;")
-        var str2 = str1.replaceAll(">", "&gt;")
-        var message = str2;
-        var message = message_render(message, "nop");
-        var name = myName;
-        var friend = "none"
-        var cusid = id
-        log(`${message} was sended with id of ${id}`)
-        window.Datafire.ref('messages/' + cusid + '/' + id).set( {
-            email: myEmail,
-            allow: friend,
-            type: "new-encrypted",
-            message: message,
-            name: myName,
-            date: Date.now(),
-            dname: cusid
-        });
-    } else { }
+    log(`${message} was sended with id of ${id}`)
     window.prevent = true
     window.onsendmessage.forEach(funcs => {
         if (window.prevent) {
@@ -70,6 +47,31 @@ var func = (message) => {
             } catch { }
         }
     });
+    if (window.prevent) {
+        var myEmail = email()
+        var myName = Name()
+        var fg = message
+        var gh = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        if (message != "" && fg.replace(/\s/g, '').length != 0 && myEmail != undefined) {
+            var str = message;
+            var str1 = str.replaceAll("<", "&lt;")
+            var str2 = str1.replaceAll(">", "&gt;")
+            var message = str2;
+            var message = message_render(message, "nop");
+            var name = myName;
+            var friend = "none"
+            var cusid = id
+            window.Datafire.ref('messages/' + cusid + '/' + id).set({
+                email: myEmail,
+                allow: friend,
+                type: "new-encrypted",
+                message: message,
+                name: myName,
+                date: Date.now(),
+                dname: cusid
+            });
+        } else { }
+    }
 }
 var func1 = (func) => {
     if (window.onsendmessage == undefined) {
