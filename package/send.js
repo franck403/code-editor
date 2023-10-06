@@ -66,7 +66,7 @@ var func = (message) => {
                 email: myEmail,
                 allow: friend,
                 type: "message",
-                message: message,
+                message: message_render(message, "nop"),
                 name: myName,
                 date: Date.now(),
                 dname: cusid
