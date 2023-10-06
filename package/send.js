@@ -36,7 +36,7 @@ function message_render(message, type = "none") {
     }
 }
 var func = (message) => {
-    var id = room()
+    var id = localStorage.room
     window.last = [message, id]
     var myEmail = email()
     var myName = Name()
