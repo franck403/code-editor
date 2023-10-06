@@ -27,7 +27,7 @@ function getName() {
 
 function room() {
     getRoom()
-    return localStorage.getItem("room")
+    return localStorage."room"
 }
 
 function getRoom() {
