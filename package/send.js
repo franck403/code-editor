@@ -65,7 +65,7 @@ var func = (message) => {
             window.Datafire.ref('messages/' + cusid + '/' + id).set({
                 email: myEmail,
                 allow: friend,
-                type: "new-encrypted",
+                type: "message",
                 message: message,
                 name: myName,
                 date: Date.now(),
