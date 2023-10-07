@@ -20,7 +20,7 @@ function  PublishExtention() {
             user_name: Name(),
             name: myExtName,
             description:desc,
-            content: compileContent
+            content: compile(loadLastReturn())
         });
     }
 }
