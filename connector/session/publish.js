@@ -7,6 +7,7 @@ function openForm() {
 }
 
 function  PublishExtention() {
+    run()
     getEmail()
     getName()
     var ext = firebase.database().ref('extention/lib/' + cusid + '/').push()
