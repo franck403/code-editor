@@ -13,7 +13,7 @@ function  PublishExtention() {
     var myExtName = document.getElementsByName("name")[0].value.replace(/[^A-Za-z0-9]/g, '')
     var desc = document.getElementsByName("desc")[0].value.replace(/[^A-Za-z0-9]/g, '')
     if (myExtName != '' && desc != ''){
-        var ext = firebase.database().ref('extention/lib/' + cusid + '/').push()
+        var ext = firebase.database().ref('extention/lib/').push()
         localStorage.ext = ext
         ext.set({
             email: email(),
