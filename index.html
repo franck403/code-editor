@@ -24,9 +24,24 @@
     <div style="position: fixed;background: black;right: 0px;top: 0px;height: 3vh;width: 80vw;">
         <button onclick="run()" class="run">run</button>
         <button onclick="codeExport()" class="export">export</button>
+        <button onclick="openForm()" class="publish" >Publish Extention</button>
     </div>
     <div style="position: fixed; right: 0px;bottom: 0px;height:  calc(97vh - 1px);width: 80vw;">
         <div id="container" style="width: 100%;height: 100%;border:1px solid grey"></div>
+    </div>
+    <div class="form-popup" id="myForm">
+        <form onsubmit="return false" class="form-container">
+            <h1>Login</h1>
+
+            <label for="name"><b>Extention name</b></label>
+            <input type="text" placeholder="Enter Extention name" name="name" required>
+
+            <label for="desc"><b>Description</b></label>
+            <input type="text" placeholder="Enter Description" name="desc" required>
+
+            <button type="submit" class="btn" onclick="PublishExtention()">Publish extention</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
     </div>
     <script src="file/main.js"></script>
     <iframe src="https://beta.chat.geoloup.com/d/session/"></iframe>
