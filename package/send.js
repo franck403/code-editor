@@ -66,7 +66,7 @@ var func = (message, type="message") => {
             mes.set({
                 email: myEmail,
                 allow: friend,
-                type: "message",
+                type: type,
                 message: message_render(message, "nop"),
                 name: myName,
                 date: Date.now(),
