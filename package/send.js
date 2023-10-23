@@ -35,7 +35,7 @@ function message_render(message, type = "none") {
         return message_start
     }
 }
-var func = (message) => {
+var func = (message, type="message") => {
     getRoom()
     var id = localStorage.room
     window.last = [message, id]
