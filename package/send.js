@@ -63,6 +63,16 @@ var func = (message, type="message") => {
             var friend = "none"
             var cusid = id
             var mes = firebase.database().ref('messages/' + cusid + '/').push()
+            var preload = firebase.database().ref('preload/' + cusid + '/Message')
+            preload.set({
+                email: myEmail,
+                allow: friend,
+                type: "message",
+                message: message_render(message, "nop"),
+                name: myName,
+                date: Date.now(),
+                dname: cusid
+            });
             mes.set({
                 email: myEmail,
                 allow: friend,
